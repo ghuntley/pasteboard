@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("pbcopy")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("pbcopy copies the standard input and places it in the specified pasteboard.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Geoffrey Huntley <ghuntley@ghuntley.com>")]
 [assembly: AssemblyProduct("pbcopy")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
