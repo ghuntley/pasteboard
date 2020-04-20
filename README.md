@@ -23,6 +23,7 @@ To write the contents of your clipboard to a file:
 
     # cd C:\tmp
     # pbpaste > output.txt
+    # pbpaste --lf > output.txt # Converting CRLF with LF
 
 
 ## With thanks to
