@@ -7,17 +7,17 @@ using System.Windows.Forms;
 
 namespace pbpaste
 {
-    class Program
+class Program
+{
+    [STAThread]
+    static void Main(string[] args)
     {
-        [STAThread]
-        static void Main(string[] args)
+        var pasteboard = Clipboard.GetText();
+        if (args.Length > 0 && "--lf".Equals(args[0]))
         {
-            var pasteboard = Clipboard.GetText();
-            if (args.Length > 0 && "--lf".Equals(args[0]))
-            {
-                pasteboard = pasteboard.Replace("\r\n", "\n");
-            }
-            Console.Write(pasteboard);
+            pasteboard = pasteboard.Replace("\r\n", "\n");
         }
+        Console.Write(pasteboard);
     }
+}
 }
