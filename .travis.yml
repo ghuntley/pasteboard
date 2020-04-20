@@ -1,0 +1,17 @@
+language: csharp
+solution: pasteboard.sln
+
+before_deploy:
+  - rm -rf dist && mkdir dist && cp pbcopy/bin/Release/pbcopy.exe pbpaste/bin/Release/pbpaste.exe dist
+  - (cd dist && zip -r pasteboard-$TRAVIS_TAG-windows.zip . && sha256sum pasteboard-$TRAVIS_TAG-windows.zip | cut -d ' ' -f 1 >pasteboard-$TRAVIS_TAG-windows.zip.sha256)
+
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  name: $TRAVIS_TAG
+  file:
+    - dist/pasteboard-$TRAVIS_TAG-windows.zip
+    - dist/pasteboard-$TRAVIS_TAG-windows.zip.sha256
+  skip_cleanup: true
+  on:
+    tags: true
