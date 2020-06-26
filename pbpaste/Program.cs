@@ -13,8 +13,11 @@ namespace pbpaste
         static void Main(string[] args)
         {
             var pasteboard = Clipboard.GetText();
-
-            Console.WriteLine(pasteboard);
+            if (args.Length > 0 && "--lf".Equals(args[0]))
+            {
+                pasteboard = pasteboard.Replace("\r\n", "\n");
+            }
+            Console.Write(pasteboard);
         }
     }
 }
